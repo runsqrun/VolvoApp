@@ -1774,39 +1774,42 @@ body {
 
 /* ── Compare entry card in chat ── */
 .ss-compare-entry {
-  background: #fff;
-  border-radius: 12px;
-  padding: 12px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
   margin: 6px 0;
 }
 .ss-compare-cars {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 12px;
 }
 .ss-compare-car-chip {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: #f6f7f9;
-  border-radius: 8px;
-  padding: 8px 10px;
+  gap: 12px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
 }
 .ss-compare-car-chip img {
-  width: 48px;
-  height: 30px;
+  width: 64px;
+  height: 40px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 .ss-compare-car-chip span:first-of-type {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: #1a1a1a;
   flex: 1;
 }
 .ss-compare-car-price {
-  font-size: 12px;
+  font-size: 13px;
   color: #888;
+  flex-shrink: 0;
 }
 .ss-compare-go-btn {
   width: 100%;
