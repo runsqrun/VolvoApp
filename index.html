@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Volvo App Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main id="screen-discover" class="screen active" aria-label="发现页">
+        <div class="discover-image-wrap">
+          <div class="discover-seg-wrap seg-discover-1">
+            <img class="discover-seg-img" src="./assets/discover-seg1.png" alt="发现页分段1" />
+          </div>
+          <div class="discover-seg-wrap seg-discover-2">
+            <img class="discover-seg-img" src="./assets/discover-seg2.png" alt="发现页分段2" />
+          </div>
+          <div class="discover-seg-wrap seg-discover-3">
+            <img class="discover-seg-img" src="./assets/discover-seg3.png" alt="发现页分段3" />
+          </div>
+          <div class="discover-seg-wrap seg-discover-4">
+            <img class="discover-seg-img" src="./assets/discover-seg4.png" alt="发现页分段4" />
+          </div>
+        </div>
+        <nav class="bottom-tab discover-tab" aria-label="底部导航">
+          <button class="tab-item" data-target="buy">
+            <img src="./assets/icon-buy-car.svg" alt="购车" />
+            <span>购车</span>
+          </button>
+          <button class="tab-item" data-target="drive">
+            <img src="./assets/icon-car.svg" alt="用车" />
+            <span>用车</span>
+          </button>
+          <button class="tab-item active">
+            <img src="./assets/icon-compass.svg" alt="发现" />
+            <span>发现</span>
+          </button>
+          <button class="tab-item">
+            <img src="./assets/icon-gift.svg" alt="商城" />
+            <span>商城</span>
+          </button>
+          <button class="tab-item">
+            <img src="./assets/icon-user.svg" alt="我的" />
+            <span>我的</span>
+          </button>
+        </nav>
+      </main>
+
+      <main id="screen-buy" class="screen" aria-label="购车页">
+        <div class="buy-image-wrap">
+          <div class="buy-seg-wrap seg-buy-1">
+            <img class="buy-seg-img" src="./assets/buy-seg1.png" alt="购车页分段1" />
+            <div class="hero-action-btns">
+              <button id="to-more-btn" class="hero-action-btn">了解更多</button>
+              <button class="hero-action-btn">价格配置</button>
+            </div>
+          </div>
+          <!-- 车型解读 section (real UI) -->
+          <section class="model-review">
+            <div class="mr-head">
+              <h2 class="mr-title">车型解读</h2>
+              <button class="smart-pick-btn" id="smart-pick-btn">
+                <img src="./assets/icon-smart-ai.svg" alt="" />
+                <span>智能选车</span>
+              </button>
+            </div>
+            <div class="mr-tabs">
+              <button class="mr-tab v-tab active" data-tab="official">官方解读</button>
+              <button class="mr-tab v-tab" data-tab="user">用户口碑</button>
+              <button class="mr-tab v-tab" data-tab="similar">相似推荐</button>
+            </div>
+            <!-- 官方解读 panel -->
+            <div class="mr-panel active" id="panel-official">
+              <div class="card-scroll">
+                <div class="review-card">
+                  <img class="rc-img" src="./assets/review-card1.png" alt="" />
+                  <p class="rc-txt">全新XC70泊车辅助&amp;遥控泊车辅助使用…</p>
+                </div>
+                <div class="review-card">
+                  <img class="rc-img" src="./assets/review-card2.png" alt="" />
+                  <p class="rc-txt">沃尔沃全新XC70 | 安全从此长续航，全…</p>
+                </div>
+                <div class="review-card">
+                  <img class="rc-img" src="./assets/review-card2.png" alt="" />
+                  <p class="rc-txt">沃尔沃XC70健康座舱深度体验…</p>
+                </div>
+              </div>
+            </div>
+            <!-- 用户口碑 panel -->
+            <div class="mr-panel" id="panel-user">
+              <div class="card-scroll">
+                <div class="review-card">
+                  <img class="rc-img" src="./assets/review-card2.png" alt="" />
+                  <p class="rc-txt">车主真实评价 | 三个月用车感受分享</p>
+                </div>
+                <div class="review-card">
+                  <img class="rc-img" src="./assets/review-card1.png" alt="" />
+                  <p class="rc-txt">沃尔沃XC70车主口碑 | 家用首选之道</p>
+                </div>
+              </div>
+            </div>
+            <!-- 相似推荐 panel -->
+            <div class="mr-panel" id="panel-similar">
+              <div class="card-scroll">
+                <div class="similar-card">
+                  <div class="sc-img"><img src="./assets/car-xc60.png" alt="XC60" /></div>
+                  <h3 class="sc-name">XC60</h3>
+                  <p class="sc-desc">北欧豪华中型SUV，兼顾运动与优雅</p>
+                </div>
+                <div class="similar-card">
+                  <div class="sc-img"><img src="./assets/car-xc90.png" alt="XC90" /></div>
+                  <h3 class="sc-name">XC90</h3>
+                  <p class="sc-desc">旗舰级七座SUV，从容驾驭每一程</p>
+                </div>
+                <div class="similar-card">
+                  <div class="sc-img"><img src="./assets/car-s90.png" alt="S90" /></div>
+                  <h3 class="sc-name">S90</h3>
+                  <p class="sc-desc">北欧旗舰轿车，彰显优雅格调</p>
+                </div>
+                <div class="similar-card">
+                  <div class="sc-img"><img src="./assets/car-v60.png" alt="V60" /></div>
+                  <h3 class="sc-name">V60</h3>
+                  <p class="sc-desc">北欧豪华旅行车，自在随行</p>
+                </div>
+                <div class="similar-card">
+                  <div class="sc-img"><img src="./assets/car-c40.png" alt="C40" /></div>
+                  <h3 class="sc-name">C40</h3>
+                  <p class="sc-desc">纯电轿跑SUV，引领未来出行</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 服务承诺 section -->
+          <section class="service-promise">
+            <h2 class="sp-title">服务承诺</h2>
+            <div class="sp-banner">
+              <img src="./assets/service-banner.png" alt="十二大服务承诺" />
+            </div>
+          </section>
+          <!-- 车主权益 section (real UI) -->
+          <section class="owner-benefits">
+            <h2 class="ob-title">车主权益</h2>
+            <div class="ob-tabs">
+              <button class="v-tab active" data-ob="promo">限时礼遇</button>
+              <button class="v-tab" data-ob="guard">终身守护礼</button>
+              <button class="v-tab" data-ob="trade">置换增购礼</button>
+              <button class="v-tab" data-ob="finance">金融限时礼</button>
+            </div>
+            <div class="ob-panel active" id="ob-promo">
+              <div class="ob-card">
+                <p class="ob-line ob-bold">限时参考尊享价26.99万元起*</p>
+                <p class="ob-line ob-bold">叠享15000元国家补贴*</p>
+                <div class="ob-note">
+                  <p>活动时间： 2026.3.1-2026.3.31</p>
+                  <p>*限时参考尊享价为补贴后参考优惠价格，仅供参考，15000元国家补贴的适用范围和标准详见《2026年汽车以旧换新补贴实施细则》，实际购车价格由客户与沃尔沃汽车授权经销商协商确认。</p>
+                  <p>*以上优惠仅限活动期间开票并交付的用户可享，具体政策及活动详询沃尔沃汽车授权经销商</p>
+                </div>
+              </div>
+            </div>
+            <div class="ob-panel" id="ob-guard">
+              <div class="ob-card">
+                <p class="ob-line ob-bold">终身免费基础保养</p>
+                <p class="ob-line">含机油、机油滤芯、空调滤芯、空气滤芯等常规保养项目终身免费。</p>
+                <div class="ob-note"><p>*详细条款请咨询授权经销商</p></div>
+              </div>
+            </div>
+            <div class="ob-panel" id="ob-trade">
+              <div class="ob-card">
+                <p class="ob-line ob-bold">置换补贴最高达20,000元</p>
+                <p class="ob-line">旧车置换或增购沃尔沃新车，即享额外补贴。</p>
+                <div class="ob-note"><p>*活动时间：2026.3.1-2026.3.31，详询经销商</p></div>
+              </div>
+            </div>
+            <div class="ob-panel" id="ob-finance">
+              <div class="ob-card">
+                <p class="ob-line ob-bold">低至0息金融方案</p>
+                <p class="ob-line">多种灵活贷款方案可选，首付低至30%，最长60期分期。</p>
+                <div class="ob-note"><p>*具体金融方案请咨询授权经销商</p></div>
+              </div>
+            </div>
+          </section>
+          <div class="buy-seg-wrap seg-buy-4">
+            <img class="buy-seg-img" src="./assets/buy-seg4.png" alt="购车页分段4" />
+          </div>
+          <div class="buy-seg-wrap seg-buy-5">
+            <img class="buy-seg-img" src="./assets/buy-seg5.png" alt="购车页分段5" />
+          </div>
+        </div>
+        <!-- 智能选车 sheet -->
+        <div class="smart-sheet-overlay" id="smart-overlay"></div>
+        <div class="smart-sheet" id="smart-sheet">
+          <div class="ss-header">
+            <div class="ss-handle"></div>
+            <div class="ss-title-row">
+              <img src="./assets/icon-smart-ai.svg" alt="" class="ss-ai-icon" />
+              <span class="ss-title">智能选车顾问</span>
+            </div>
+            <button class="ss-close" id="ss-close">&times;</button>
+          </div>
+          <div class="ss-body" id="ss-body">
+            <div class="ss-msg ss-msg-ai">
+              <div class="ss-bubble">您好！我是沃尔沃智能选车顾问。请告诉我您的用车需求，例如家庭人数、主要用途、预算等，我来为您推荐最合适的车型。</div>
+            </div>
+            <div class="ss-suggestions" id="ss-suggestions">
+              <button class="ss-sug">我在找一台适合一家五口人（有儿童）的SUV</button>
+              <button class="ss-sug">我想要一台高舒适度、四驱的油车</button>
+              <button class="ss-sug">XC60和XC70怎么选</button>
+              <button class="ss-sug">哪个颜色的S90卖得最好？</button>
+            </div>
+          </div>
+          <div class="ss-input-wrap">
+            <input class="ss-input" id="ss-input" type="text" placeholder="描述您的用车需求…" />
+            <button class="ss-send" id="ss-send">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3.5 10L17 3 13.5 10 17 17 3.5 10Z" fill="#fff"/><path d="M3.5 10H13.5" stroke="#fff" stroke-width="1.2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <nav class="bottom-tab buy-tab" aria-label="底部导航">
+          <button class="tab-item active">
+            <img src="./assets/icon-buy-car-active.svg" alt="购车" />
+            <span>购车</span>
+          </button>
+          <button class="tab-item" data-target="drive">
+            <img src="./assets/icon-car.svg" alt="用车" />
+            <span>用车</span>
+          </button>
+          <button class="tab-item" data-target="discover">
+            <img src="./assets/icon-compass-outline.svg" alt="发现" />
+            <span>发现</span>
+          </button>
+          <button class="tab-item">
+            <img src="./assets/icon-gift.svg" alt="商城" />
+            <span>商城</span>
+          </button>
+          <button class="tab-item">
+            <img src="./assets/icon-user.svg" alt="我的" />
+            <span>我的</span>
+          </button>
+        </nav>
+      </main>
+
+      <main id="screen-more" class="screen more-screen" aria-label="了解更多页">
+        <section class="hero-wrap">
+          <header class="sticky-header">
+            <div class="status-bar-spacer"></div>
+            <button id="back-btn" class="circle-btn" aria-label="返回">
+              <img src="./assets/icon-chevron-left.svg" alt="返回" />
+            </button>
+            <div class="header-tabs">
+              <button class="small-tab active">概览</button>
+              <button class="small-tab">外饰</button>
+              <button class="small-tab">内饰</button>
+              <button class="small-tab">功能</button>
+              <button class="small-tab">安全</button>
+              <button class="small-tab">权益</button>
+            </div>
+            <button class="circle-btn" aria-label="分享">
+              <img src="./assets/icon-share.svg" alt="分享" />
+            </button>
+          </header>
+          <img class="hero-image" src="./assets/hero-car.png" alt="全新XC70" />
+          <div class="scroll-hint" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 5 6-5" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 5 6-5" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </section>
+
+        <section class="content-block intro">
+          <h1>电动，时刻在线。<br />豪华，始终如一。</h1>
+          <div class="stats-grid">
+            <div><strong>212 </strong><span>km</span><p>CLTC工况纯电续航里程</p></div>
+            <div><strong>5.3 </strong><span>秒</span><p>零百加速</p></div>
+            <div><strong>1201 </strong><span>km</span><p>CLTC工况综合续航里程</p></div>
+            <div><strong>6 </strong><span>kW</span><p>对外放电</p></div>
+          </div>
+        </section>
+
+        <section class="price-block">
+          <p>限时参考尊享价 <b>¥269,900</b> 起</p>
+          <small>*您的订购最终需根据您与经销商达成的条款和条件作确认。</small>
+        </section>
+
+        <section class="feature-block">
+          <h2>满载智能功能，成为你内外兼修的可靠伙伴。</h2>
+          <div class="feature-grid">
+            <article>
+              <div class="feature-icon"><img src="./assets/icon-leaf.svg" alt="" /></div>
+              <h3>CleanZone®</h3><p>北欧清洁驾驶舱</p>
+            </article>
+            <article>
+              <div class="feature-icon"><img src="./assets/icon-monitor.svg" alt="" /></div>
+              <h3>全新车机界面</h3><p>设计语言</p>
+            </article>
+            <article>
+              <div class="feature-icon"><img src="./assets/icon-speaker.svg" alt="" /></div>
+              <h3>HarmanKardon®</h3><p>尊贵级音响系统</p>
+            </article>
+            <article>
+              <div class="feature-icon"><img src="./assets/icon-radio.svg" alt="" /></div>
+              <h3>BLIS</h3><p>盲点信息系统</p>
+            </article>
+          </div>
+        </section>
+
+        <div id="floating-cta" class="floating-cta" aria-hidden="true">
+          <div class="floating-cta-inner">
+            <span class="floating-cta-label">全新XC70</span>
+            <div class="floating-cta-btns">
+              <button class="outline-btn">预约试驾</button>
+              <button class="solid-btn">立即订购</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ── 用车页 ── -->
+      <main id="screen-drive" class="screen drive-screen" aria-label="用车页">
+        <div class="drive-status-bar"></div>
+        <div class="drive-carousel" id="drive-carousel">
+          <div class="drive-track" id="drive-track">
+
+            <!-- Slide 0: CLEANZONE 空气净化 (default) -->
+            <div class="drive-slide">
+              <div class="drive-info">
+                <div class="drive-info-row">
+                  <div class="drive-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round"><path d="M2 6c3-2 5 2 8 0s5-2 8 0"/><path d="M2 12c3-2 5 2 8 0s5-2 8 0"/><path d="M2 18c3-2 5 2 8 0s5-2 8 0"/></svg>
+                  </div>
+                  <div>
+                    <h2 class="drive-title">CLEANZONE 空气净化</h2>
+                    <p class="drive-sub">Air Purification System</p>
+                  </div>
+                </div>
+                <p class="drive-desc">沃尔沃独有 CLEANZONE 系统，PM2.5 高效过滤，为家人提供北欧级清新空气。</p>
+              </div>
+              <div class="drive-media drive-media-video">
+                <video class="drive-video" id="drive-video"
+                       poster="./assets/drive-interior.png"
+                       muted loop playsinline>
+                  <source src="./assets/AirPurification.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+
+            <!-- Slide 1: 远程解锁 -->
+            <div class="drive-slide">
+              <div class="drive-info">
+                <div class="drive-info-row">
+                  <div class="drive-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+                  </div>
+                  <div>
+                    <h2 class="drive-title">远程解锁</h2>
+                    <p class="drive-sub">Remote Unlock</p>
+                  </div>
+                </div>
+                <p class="drive-desc">沃尔沃远程控制系统，一键解锁或锁定车辆，随时掌握车辆安全状态。</p>
+              </div>
+              <div class="drive-media">
+                <img src="./assets/drive-topview.png" alt="远程解锁" />
+              </div>
+            </div>
+
+            <!-- Slide 2: 远程开窗 -->
+            <div class="drive-slide">
+              <div class="drive-info">
+                <div class="drive-info-row">
+                  <div class="drive-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-3h12l3 3"/><path d="M3 7v12a1 1 0 001 1h16a1 1 0 001-1V7"/><path d="M7 7v5"/><path d="M17 7v5"/><path d="M3 12h18"/></svg>
+                  </div>
+                  <div>
+                    <h2 class="drive-title">远程开窗</h2>
+                    <p class="drive-sub">Remote Window Control</p>
+                  </div>
+                </div>
+                <p class="drive-desc">出发前远程开启车窗通风，告别闷热与异味，享受清爽上车体验。</p>
+              </div>
+              <div class="drive-media">
+                <img src="./assets/drive-topview.png" alt="远程开窗" />
+              </div>
+            </div>
+
+            <!-- Slide 3: 座椅加热 -->
+            <div class="drive-slide">
+              <div class="drive-info">
+                <div class="drive-info-row">
+                  <div class="drive-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20h12"/><path d="M8 16V8a4 4 0 018 0v8"/><path d="M10 12c0-1 .5-2 2-2s2 1 2 2"/><path d="M9 20v-4"/><path d="M15 20v-4"/></svg>
+                  </div>
+                  <div>
+                    <h2 class="drive-title">座椅加热</h2>
+                    <p class="drive-sub">Seat Climate System</p>
+                  </div>
+                </div>
+                <p class="drive-desc">远程预设座椅加热与通风，上车即享舒适温度，冬暖夏凉触手可及。</p>
+              </div>
+              <div class="drive-media">
+                <img src="./assets/drive-interior.png" alt="座椅加热" />
+              </div>
+            </div>
+
+            <!-- Slide 4: 远程充电 -->
+            <div class="drive-slide">
+              <div class="drive-info">
+                <div class="drive-info-row">
+                  <div class="drive-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M10 2v2"/><path d="M14 2v2"/><path d="M13 9l-2 4h3l-2 4"/></svg>
+                  </div>
+                  <div>
+                    <h2 class="drive-title">远程充电</h2>
+                    <p class="drive-sub">Smart Charging</p>
+                  </div>
+                </div>
+                <p class="drive-desc">智能管理充电计划，远程监控充电进度，随时随地掌握电量信息。</p>
+              </div>
+              <div class="drive-media">
+                <img src="./assets/drive-charging.png" alt="远程充电" />
+              </div>
+            </div>
+
+            <!-- Slide 5: 闪灯鸣笛 -->
+            <div class="drive-slide">
+              <div class="drive-info">
+                <div class="drive-info-row">
+                  <div class="drive-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M4.93 4.93l2.12 2.12"/><path d="M16.95 16.95l2.12 2.12"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="M4.93 19.07l2.12-2.12"/><path d="M16.95 7.05l2.12-2.12"/></svg>
+                  </div>
+                  <div>
+                    <h2 class="drive-title">闪灯鸣笛</h2>
+                    <p class="drive-sub">Flash & Horn</p>
+                  </div>
+                </div>
+                <p class="drive-desc">在停车场找不到车？远程闪灯鸣笛，快速定位您的爱车。</p>
+              </div>
+              <div class="drive-media">
+                <img src="./assets/drive-charging.png" alt="闪灯鸣笛" />
+              </div>
+            </div>
+
+            <!-- Slide 6: 小沃智能语音助理 -->
+            <div class="drive-slide drive-slide-xiaowo">
+              <div class="drive-info">
+                <div class="drive-info-row">
+                  <div class="drive-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><path d="M12 19v4"/><path d="M8 23h8"/></svg>
+                  </div>
+                  <div>
+                    <h2 class="drive-title">全新升级 Volvo Car UX</h2>
+                    <p class="drive-sub">Smart Voice Assistant</p>
+                  </div>
+                </div>
+                <p class="drive-desc">沃尔沃智能体验持续提升，带给您更加人性化、更加安全的座舱智能交互。</p>
+              </div>
+              <div class="drive-media">
+                <div class="xiaowo-card">
+                  <div class="xiaowo-orb">
+                    <div class="xiaowo-orb-inner"></div>
+                    <div class="xiaowo-dot xiaowo-dot-1"></div>
+                    <div class="xiaowo-dot xiaowo-dot-2"></div>
+                    <div class="xiaowo-dot xiaowo-dot-3"></div>
+                  </div>
+                  <p class="xiaowo-greeting">“你好，小沃！</p>
+                  <p class="xiaowo-command">打开空调</p>
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
+          <!-- Carousel dots -->
+          <div class="drive-dots" id="drive-dots">
+            <span class="drive-dot active"></span>
+            <span class="drive-dot"></span>
+            <span class="drive-dot"></span>
+            <span class="drive-dot"></span>
+            <span class="drive-dot"></span>
+            <span class="drive-dot"></span>
+            <span class="drive-dot"></span>
+          </div>
+        </div>
+
+        <section class="drive-cta">
+          <p class="drive-cta-tip">绑定爱车并激活车控，即刻开启更多丰富内容</p>
+          <div class="drive-cta-btns">
+            <button class="outline-btn">体验车控</button>
+            <button class="solid-btn">绑定爱车</button>
+          </div>
+        </section>
+
+        <nav class="bottom-tab drive-tab" aria-label="底部导航">
+          <button class="tab-item" data-target="buy">
+            <img src="./assets/icon-buy-car.svg" alt="购车" />
+            <span>购车</span>
+          </button>
+          <button class="tab-item active">
+            <img src="./assets/icon-car-active.svg" alt="用车" />
+            <span>用车</span>
+          </button>
+          <button class="tab-item" data-target="discover">
+            <img src="./assets/icon-compass-outline.svg" alt="发现" />
+            <span>发现</span>
+          </button>
+          <button class="tab-item">
+            <img src="./assets/icon-gift.svg" alt="商城" />
+            <span>商城</span>
+          </button>
+          <button class="tab-item">
+            <img src="./assets/icon-user.svg" alt="我的" />
+            <span>我的</span>
+          </button>
+        </nav>
+      </main>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

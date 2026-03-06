@@ -1,0 +1,1483 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Inter, "Noto Sans SC", "PingFang SC", sans-serif;
+  background: #d9d9d9;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 393px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.screen {
+  display: none;
+  min-height: 100dvh;
+  position: relative;
+}
+
+.screen.active {
+  display: block;
+}
+
+.full-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.discover-image-wrap {
+  width: 100%;
+  padding-bottom: 90px;
+  background: #ebebeb;
+}
+
+.discover-seg-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.discover-seg-img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.seg-discover-1 { aspect-ratio: 393 / 702; }
+.seg-discover-1 .discover-seg-img { height: 124.41%; top: -0.02%; }
+
+.seg-discover-2 { aspect-ratio: 393 / 474; }
+.seg-discover-2 .discover-seg-img { height: 184.25%; top: -31.26%; }
+
+.seg-discover-3 { aspect-ratio: 393 / 475; }
+.seg-discover-3 .discover-seg-img { height: 183.86%; top: -62.35%; }
+
+.seg-discover-4 { aspect-ratio: 393 / 590; }
+.seg-discover-4 .discover-seg-img { height: 148.02%; top: -47.99%; }
+
+.bottom-tab {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 393px;
+  height: 90px;
+  background: #ebebeb;
+  border-top: 0.692px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12.689px 15.997px 0;
+  z-index: 15;
+}
+
+.tab-item {
+  border: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3.999px;
+  color: #868686;
+  font-size: 12px;
+  font-weight: 500;
+  width: 65.781px;
+  height: 43.991px;
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+.tab-item img {
+  width: 23.995px;
+  height: 23.995px;
+  display: block;
+}
+
+.tab-item span {
+  display: block;
+  height: 15.997px;
+  line-height: 16px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.tab-item.active {
+  color: #0a0a0a;
+}
+
+.bottom-tab .tab-item:nth-child(2),
+.bottom-tab .tab-item:nth-child(3) {
+  flex: 1 0 0;
+  width: auto;
+}
+
+.more-btn {
+  position: absolute;
+  top: 244px;
+  right: 18px;
+  border: 1px solid #ffffff;
+  border-radius: 9999px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  line-height: 20px;
+  padding: 8px 18px;
+  backdrop-filter: blur(2px);
+  z-index: 10;
+}
+
+.buy-image-wrap {
+  width: 100%;
+  position: relative;
+  padding-bottom: 90px;
+  background: #d9d9d9;
+}
+
+.buy-seg-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.buy-seg-img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  display: block;
+  pointer-events: none;
+}
+
+.seg-buy-1 { aspect-ratio: 393 / 783; }
+.seg-buy-4 { aspect-ratio: 393 / 513; }
+.seg-buy-5 { aspect-ratio: 393 / 597; }
+
+.seg-buy-1 .buy-seg-img { height: 111.54%; top: -0.02%; }
+.seg-buy-4 .buy-seg-img { height: 170.24%; top: -19.14%; }
+.seg-buy-5 .buy-seg-img { height: 146.29%; top: -18.12%; }
+
+/* ── 车型解读 section ── */
+.model-review {
+  background: #ebebeb;
+  padding: 24px 0 20px;
+}
+
+.mr-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 16px;
+}
+
+.mr-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0a0a0a;
+  line-height: 28px;
+}
+
+/* ── 智能选车 button ── */
+.smart-pick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgba(27, 74, 139, 0.3);
+  background: linear-gradient(135deg, rgba(27, 74, 139, 0.08) 0%, rgba(99, 140, 210, 0.12) 100%);
+  border-radius: 9999px;
+  padding: 5px 14px 5px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1b4a8b;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.smart-pick-btn img {
+  width: 18px;
+  height: 18px;
+  filter: invert(18%) sepia(60%) saturate(900%) hue-rotate(190deg) brightness(60%);
+}
+
+.smart-pick-btn:active {
+  background: linear-gradient(135deg, #1b4a8b 0%, #2d6bc4 100%);
+  border-color: #1b4a8b;
+  color: #fff;
+}
+
+.smart-pick-btn:active img {
+  filter: invert(1);
+}
+
+.mr-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px 0;
+}
+
+/* ── Review panels ── */
+.mr-panel {
+  display: none;
+  padding-top: 14px;
+}
+
+.mr-panel.active {
+  display: block;
+}
+
+.card-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 0 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card-scroll > :first-child {
+  margin-left: 16px;
+}
+
+.card-scroll > :last-child {
+  margin-right: 16px;
+}
+
+.card-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Review cards (官方解读 / 用户口碑) ── */
+.review-card {
+  flex: 0 0 165px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rc-img {
+  display: block;
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.rc-txt {
+  margin: 0;
+  padding: 10px 12px 14px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Similar cards (相似推荐) ── */
+.similar-card {
+  flex: 0 0 165px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sc-img {
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.sc-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center var(--pos, 50%);
+}
+
+.sc-name {
+  margin: 10px 12px 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0a0a0a;
+  line-height: 22px;
+}
+
+.sc-desc {
+  margin: 0 12px 14px;
+  font-size: 12px;
+  color: #999;
+  line-height: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── 服务承诺 section ── */
+.service-promise {
+  background: #ebebeb;
+  padding: 24px 0 20px;
+}
+
+.sp-title {
+  margin: 0 0 14px;
+  padding: 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0a0a0a;
+  line-height: 28px;
+}
+
+.sp-banner {
+  padding: 0 16px;
+}
+
+.sp-banner img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ── Shared v-tab style (车型解读 & 车主权益) ── */
+.v-tab {
+  border: 1.5px solid transparent;
+  background: #fff;
+  border-radius: 10px;
+  padding: 7px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  line-height: 20px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.v-tab.active {
+  border-color: #1b4a8b;
+  color: #333;
+  font-weight: 600;
+  background: #fff;
+}
+
+/* ── 车主权益 section ── */
+.owner-benefits {
+  background: #ebebeb;
+  padding: 24px 0 20px;
+}
+
+.ob-title {
+  margin: 0 0 14px;
+  padding: 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0a0a0a;
+  line-height: 28px;
+}
+
+.ob-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ob-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.ob-panel {
+  display: none;
+  padding: 0 16px;
+}
+
+.ob-panel.active {
+  display: block;
+}
+
+.ob-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 16px;
+}
+
+.ob-line {
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: #0a0a0a;
+  line-height: 22px;
+}
+
+.ob-bold {
+  font-weight: 600;
+}
+
+.ob-note {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.ob-note p {
+  margin: 0 0 4px;
+  font-size: 11px;
+  color: #999;
+  line-height: 16px;
+}
+
+.hero-action-btns {
+  position: absolute;
+  bottom: 61%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  z-index: 5;
+}
+
+.hero-action-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.hero-action-btn:active {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.more-screen {
+  background: #f3f4f6;
+  padding-bottom: 120px;
+}
+
+.hero-wrap {
+  position: relative;
+  background: #fff;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── Scroll hint arrow ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: -6px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-hint svg:first-child {
+  margin-bottom: -10px;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  50% { transform: translateX(-50%) translateY(8px); opacity: 0.5; }
+}
+
+.status-bar-spacer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 47px;
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 393px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 11.998px;
+  padding: 47px 15.997px 12px;
+  background: transparent;
+}
+
+.circle-btn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 9999px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .circle-btn {
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+  }
+  .circle-btn img {
+    --stroke-0: #fff;
+  }
+}
+
+.circle-btn img {
+  width: 19.996px;
+  height: 19.996px;
+  filter: invert(77%);
+}
+
+.header-tabs {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-radius: 9999px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+  overflow-x: auto;
+  box-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header-tabs {
+    background: rgba(0, 0, 0, 0.35);
+  }
+}
+
+.small-tab {
+  border: 0;
+  background: transparent;
+  width: 50.833px;
+  flex: 0 0 50.833px;
+  height: 31.993px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+  color: #364153;
+  padding: 0;
+  text-align: center;
+}
+
+.small-tab:last-child {
+  font-size: 14px;
+}
+
+.small-tab.active {
+  background: #101828;
+  color: #fff;
+}
+
+.content-block {
+  padding: 47.99px 31.993px;
+  background: #fff;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 45px;
+  letter-spacing: 0.3691px;
+  color: #0a0a0a;
+  font-weight: 500;
+}
+
+.stats-grid {
+  margin-top: 47.99px;
+  display: grid;
+  grid-template-columns: 148.467px 148.467px;
+  gap: 31.993px 31.993px;
+}
+
+.stats-grid strong {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 400;
+  letter-spacing: 0.3691px;
+  color: #0a0a0a;
+}
+
+.stats-grid span {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.4492px;
+}
+
+.stats-grid p {
+  margin: 7.998px 0 0;
+  color: rgba(10, 10, 10, 0.7);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+}
+
+.price-block {
+  background: #f3f4f6;
+  text-align: center;
+  padding: 31.993px 31.993px;
+}
+
+.price-block p {
+  margin: 0;
+  color: #4a5565;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+}
+
+.price-block b {
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0.3955px;
+  color: #0a0a0a;
+  font-weight: 400;
+  padding: 0;
+}
+
+.price-block small {
+  display: block;
+  margin-top: 7.998px;
+  color: #6a7282;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.feature-block {
+  background: #f3f4f6;
+  padding: 47.99px 31.993px;
+}
+
+.feature-block h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 37.5px;
+  letter-spacing: 0.3955px;
+  font-weight: 500;
+  color: #0a0a0a;
+}
+
+.feature-grid {
+  margin-top: 47.99px;
+  display: grid;
+  grid-template-columns: 152.466px 152.466px;
+  gap: 23.997px 23.994px;
+}
+
+.feature-grid article {
+  text-align: center;
+}
+
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  height: 39.992px;
+  margin-bottom: 0;
+}
+
+.feature-icon img {
+  width: 39.992px;
+  height: 39.992px;
+}
+
+.feature-grid h3 {
+  margin: 15.998px 0 0;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: -0.4395px;
+  font-weight: 500;
+  color: #0a0a0a;
+}
+
+.feature-grid p {
+  margin: 3.998px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+  color: #4a5565;
+}
+
+.floating-cta {
+  position: fixed;
+  left: 50%;
+  bottom: 17px;
+  transform: translate(-50%, 120%);
+  width: 393px;
+  max-width: 393px;
+  padding: 0 15.997px;
+  height: 69px;
+  transition: transform 0.24s ease;
+  z-index: 30;
+}
+
+.floating-cta-inner {
+  width: 100%;
+  height: 69.37px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15.997px;
+}
+
+.floating-cta.show {
+  transform: translate(-50%, 0);
+}
+
+.floating-cta-label {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.4395px;
+  color: #0a0a0a;
+  font-weight: 400;
+}
+
+.floating-cta-btns {
+  display: flex;
+  gap: 11.998px;
+}
+
+.outline-btn,
+.solid-btn {
+  border-radius: 9999px;
+  height: 37.376px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+}
+
+.outline-btn {
+  border: 0.692px solid #101828;
+  background: transparent;
+  color: #0a0a0a;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.solid-btn {
+  border: 0;
+  background: #101828;
+  color: #fff;
+  width: 101.655px;
+  flex: 0 0 101.655px;
+}
+
+/* ══════════════════════════════════════
+   智能选车 Sheet + Chat
+   ══════════════════════════════════════ */
+
+.smart-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.smart-sheet-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.smart-sheet {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 100%;
+  max-width: 393px;
+  height: 75dvh;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.smart-sheet.open {
+  transform: translate(-50%, 0);
+}
+
+.ss-header {
+  padding: 12px 16px 10px;
+  position: relative;
+  flex-shrink: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ss-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: #d0d0d0;
+  margin: 0 auto 12px;
+}
+
+.ss-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ss-ai-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.ss-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.ss-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: #f3f4f6;
+  border-radius: 9999px;
+  font-size: 20px;
+  line-height: 1;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ── Chat body ── */
+.ss-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ss-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 88%;
+  gap: 8px;
+}
+
+.ss-msg-ai {
+  align-self: flex-start;
+}
+
+.ss-msg-user {
+  align-self: flex-end;
+}
+
+.ss-bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+
+.ss-msg-ai .ss-bubble {
+  background: #f3f4f6;
+  border-bottom-left-radius: 4px;
+}
+
+.ss-msg-user .ss-bubble {
+  background: #101828;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+/* ── Typing indicator ── */
+.ss-typing .ss-bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 18px;
+}
+
+.typing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #999;
+  animation: typingBounce 1.2s infinite;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+
+/* ── Recommended car cards in chat ── */
+.ss-reco-cards {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 0 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ss-reco-cards::-webkit-scrollbar { display: none; }
+
+.ss-reco-card {
+  flex: 0 0 155px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.ss-reco-card:active {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.ss-reco-card-img {
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
+}
+
+.ss-reco-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ss-reco-card-body {
+  padding: 8px 10px 10px;
+}
+
+.ss-reco-card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a0a0a;
+  margin: 0;
+  line-height: 20px;
+}
+
+.ss-reco-card-price {
+  font-size: 12px;
+  color: #666;
+  margin: 2px 0 0;
+}
+
+.ss-reco-card-tag {
+  display: inline-block;
+  margin-top: 6px;
+  background: #f0f4ff;
+  color: #2563eb;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 16px;
+}
+
+.ss-reco-card-go {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  border: 0;
+  background: #101828;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ── AI response action icons ── */
+.ss-actions {
+  display: flex;
+  gap: 4px;
+  padding-top: 2px;
+}
+
+.ss-act {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  padding: 0;
+}
+
+.ss-act:hover {
+  color: #555;
+  background: #f3f4f6;
+}
+
+.ss-act.active {
+  color: #101828;
+  background: #e8eaed;
+}
+
+/* ── Suggestion bubbles ── */
+.ss-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 2px 0;
+}
+
+.ss-sug {
+  border: 1px solid #d5d7da;
+  background: #fff;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #333;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ss-sug:active {
+  background: #f0f1f3;
+  border-color: #101828;
+}
+
+.ss-suggestions.hidden {
+  display: none;
+}
+
+/* ── Input bar ── */
+.ss-input-wrap {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  border-top: 1px solid #f0f0f0;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.ss-input {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+  background: #fafafa;
+  color: #1a1a1a;
+  transition: border-color 0.2s;
+}
+
+.ss-input:focus {
+  border-color: #101828;
+}
+
+.ss-input::placeholder {
+  color: #aaa;
+}
+
+.ss-send {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: #101828;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.ss-send:active {
+  opacity: 0.7;
+}
+
+/* ── 用车页 Styles ── */
+
+.drive-screen.active {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  min-height: unset;
+  background: #f7f7f7;
+}
+
+.drive-status-bar {
+  flex-shrink: 0;
+  height: max(20px, env(safe-area-inset-top, 44px));
+}
+
+.drive-carousel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.drive-track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.drive-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  padding-top: 16px;
+}
+
+.drive-info {
+  flex-shrink: 0;
+}
+
+.drive-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.drive-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.drive-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 4px 0 3px;
+  line-height: 1.3;
+}
+
+.drive-sub {
+  font-size: 14px;
+  color: #1C6BBA;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.drive-desc {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.drive-media {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0 16px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.drive-media img,
+.drive-media video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.drive-media-video video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Carousel dots */
+.drive-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+}
+
+.drive-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.drive-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: #333;
+}
+
+/* Drive CTA section */
+.drive-cta {
+  flex-shrink: 0;
+  padding: 0 20px 8px;
+  text-align: center;
+}
+
+.drive-cta-tip {
+  font-size: 13px;
+  color: #999;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.drive-cta-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.drive-cta-btns .outline-btn,
+.drive-cta-btns .solid-btn {
+  flex: 1;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  letter-spacing: 0;
+}
+
+.drive-cta-btns .outline-btn {
+  border: none;
+  background: #fff;
+  color: #1a1a1a;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.drive-cta-btns .solid-btn {
+  width: auto;
+  background: #1C6BBA;
+  border-radius: 10px;
+}
+
+/* Tab bar variant for drive page */
+.drive-tab {
+  background: #f7f7f7;
+  flex-shrink: 0;
+  position: relative;
+  left: auto;
+  bottom: auto;
+  transform: none;
+}
+
+/* ── 小沃语音助理 slide ── */
+.drive-slide-xiaowo {
+  overflow-y: auto;
+  padding-bottom: 36px;
+}
+
+.drive-slide-xiaowo .drive-media {
+  flex: 1;
+  padding: 8px 0 12px;
+  min-height: 0;
+}
+
+.xiaowo-card {
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  border-radius: 16px;
+  padding: 32px 24px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.xiaowo-orb {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xiaowo-orb-inner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #a8d8ff 0%, #c4b5f0 40%, #f0c6d4 70%, #d4eaf7 100%);
+  box-shadow: 0 0 40px rgba(168, 216, 255, 0.5),
+              0 0 80px rgba(196, 181, 240, 0.2);
+  animation: orbPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes orbPulse {
+  0%   { transform: scale(1) translateY(0); opacity: 0.9; }
+  30%  { transform: scale(1.12) translateY(-4px); opacity: 1; }
+  60%  { transform: scale(0.96) translateY(2px); opacity: 0.92; }
+  100% { transform: scale(1) translateY(0); opacity: 0.9; }
+}
+
+.xiaowo-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.xiaowo-dot-1 {
+  background: #1C6BBA;
+  left: 12%;
+  bottom: 25%;
+  animation: dotOrbit1 3s ease-in-out infinite;
+}
+
+.xiaowo-dot-2 {
+  background: #f0a0b8;
+  right: 15%;
+  top: 30%;
+  width: 6px;
+  height: 6px;
+  animation: dotOrbit2 3.5s ease-in-out infinite;
+}
+
+.xiaowo-dot-3 {
+  background: #f0a0b8;
+  right: 22%;
+  bottom: 35%;
+  width: 5px;
+  height: 5px;
+  animation: dotOrbit3 4s ease-in-out infinite;
+}
+
+@keyframes dotOrbit1 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  25%  { transform: translate(8px, -12px) scale(1.3); opacity: 1; }
+  50%  { transform: translate(3px, -18px) scale(0.8); opacity: 0.6; }
+  75%  { transform: translate(-5px, -8px) scale(1.1); opacity: 0.9; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+}
+
+@keyframes dotOrbit2 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.7; }
+  30%  { transform: translate(-10px, 8px) scale(1.4); opacity: 1; }
+  60%  { transform: translate(-6px, 14px) scale(0.7); opacity: 0.5; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+}
+
+@keyframes dotOrbit3 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  35%  { transform: translate(6px, -10px) scale(1.2); opacity: 1; }
+  65%  { transform: translate(12px, -4px) scale(0.6); opacity: 0.4; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+}
+
+@keyframes dotFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.xiaowo-greeting {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+
+.xiaowo-command {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+}
+
+.xiaowo-bottom {
+  flex-shrink: 0;
+  padding: 0 0 0;
+}
+
+.xiaowo-subtitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.xiaowo-detail {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
