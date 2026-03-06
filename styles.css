@@ -38,7 +38,7 @@ body {
 
 .discover-image-wrap {
   width: 100%;
-  padding-bottom: 90px;
+  padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
   background: #ebebeb;
 }
 
@@ -74,14 +74,14 @@ body {
   transform: translateX(-50%);
   width: 100%;
   max-width: 393px;
-  height: 90px;
+  height: calc(90px + env(safe-area-inset-bottom, 0px));
   background: #ebebeb;
   border-top: 0.692px solid #e5e7eb;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
-  padding: 12.689px 15.997px 0;
+  padding: 12.689px 15.997px env(safe-area-inset-bottom, 0px);
   z-index: 15;
 }
 
@@ -144,7 +144,7 @@ body {
 .buy-image-wrap {
   width: 100%;
   position: relative;
-  padding-bottom: 90px;
+  padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
   background: #d9d9d9;
 }
 
@@ -514,7 +514,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 47px;
+  height: max(47px, env(safe-area-inset-top, 47px));
 }
 
 .sticky-header {
@@ -741,7 +741,7 @@ body {
 .floating-cta {
   position: fixed;
   left: 50%;
-  bottom: 17px;
+  bottom: calc(17px + env(safe-area-inset-bottom, 0px));
   transform: translate(-50%, 120%);
   width: 393px;
   max-width: 393px;
@@ -1337,6 +1337,7 @@ body {
   left: auto;
   bottom: auto;
   transform: none;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 /* ── 小沃语音助理 slide ── */
