@@ -479,6 +479,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
   const compareScreen = document.getElementById('screen-compare');
   const carRowEl = document.getElementById('cmp-car-row');
   const bodyEl = document.getElementById('cmp-body');
+  const tableEl = document.getElementById('cmp-table');
   const backBtn = document.getElementById('cmp-back');
   const pickerOverlay = document.getElementById('cmp-picker-overlay');
   const pickerList = document.getElementById('cmp-picker-list');
@@ -487,6 +488,8 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
 
   let selectedCars = []; // array of car objects (max 3)
   const MAX_CARS = 3;
+  const LABEL_W = 90;   // px – fixed label column width
+  const COL_MIN = 100;   // px – min width per car column
 
   function getCarDB() {
     return window.__volvoCarDB || [];
@@ -518,13 +521,16 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
 
   /* ── Render everything ── */
   function render() {
+    // Set table min-width: label + N columns (always 3 slots shown)
+    const cols = Math.max(selectedCars.length, MAX_CARS);
+    tableEl.style.minWidth = (LABEL_W + cols * COL_MIN) + 'px';
     renderCarRow();
     renderSpecTable();
   }
 
   /* ── Car selector row ── */
   function renderCarRow() {
-    let html = '';
+    let html = '<div class="cmp-car-row-spacer"></div>';
     selectedCars.forEach((car, idx) => {
       html += '<div class="cmp-car-slot">'
         + '<button class="cmp-car-slot-remove" data-idx="' + idx + '">&times;</button>'
