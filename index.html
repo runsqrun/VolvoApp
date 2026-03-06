@@ -518,6 +518,39 @@
         </nav>
       </main>
     </div>
+
+    <!-- ==================  Compare Screen  ================== -->
+    <div id="screen-compare" class="screen compare-screen">
+      <div class="cmp-header">
+        <button id="cmp-back" class="cmp-back-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <h2 class="cmp-title">车型对比</h2>
+        <div class="cmp-header-spacer"></div>
+      </div>
+      <!-- Sticky car selector row -->
+      <div class="cmp-car-row" id="cmp-car-row">
+        <!-- filled by JS -->
+      </div>
+      <!-- Spec table -->
+      <div class="cmp-body" id="cmp-body">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+    <!-- Car picker overlay -->
+    <div id="cmp-picker-overlay" class="cmp-picker-overlay">
+      <div class="cmp-picker-sheet">
+        <div class="cmp-picker-header">
+          <span>选择车型</span>
+          <button id="cmp-picker-close" class="cmp-picker-close">&times;</button>
+        </div>
+        <div class="cmp-picker-list" id="cmp-picker-list">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+
     <script src="./main.js"></script>
   </body>
 </html>

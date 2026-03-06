@@ -2,7 +2,8 @@ const screens = {
   discover: document.getElementById('screen-discover'),
   buy: document.getElementById('screen-buy'),
   more: document.getElementById('screen-more'),
-  drive: document.getElementById('screen-drive')
+  drive: document.getElementById('screen-drive'),
+  compare: document.getElementById('screen-compare')
 };
 
 const floatingCta = document.getElementById('floating-cta');
@@ -100,15 +101,90 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
 
   // Volvo car knowledge base for recommendations
   const carDB = [
-    { name: 'XC90', price: '¥638,900起', tag: '旗舰七座', desc: '旗舰级豪华七座SUV，宽敞空间满足全家出行', img: './assets/hero-car.png', keywords: ['家庭','七座','大空间','SUV','旗舰','豪华','露营','长途'] },
-    { name: 'XC60', price: '¥399,900起', tag: '豪华中型', desc: '北欧豪华中型SUV，兼顾驾驶乐趣与实用性', img: './assets/hero-car.png', keywords: ['通勤','中型','SUV','运动','日常','城市','均衡'] },
-    { name: 'XC40', price: '¥269,900起', tag: '都市精选', desc: '紧凑型都市SUV，灵活穿梭城市每一天', img: './assets/hero-car.png', keywords: ['通勤','城市','紧凑','SUV','年轻','都市','小型','经济'] },
-    { name: 'S90',  price: '¥449,900起', tag: '北欧旗舰', desc: '沃尔沃旗舰轿车，优雅气度商务之选', img: './assets/hero-car.png', keywords: ['商务','轿车','旗舰','优雅','豪华','舒适'] },
-    { name: 'S60',  price: '¥329,900起', tag: '运动轿车', desc: '北欧豪华运动轿车，彰显个性驾驶品味', img: './assets/hero-car.png', keywords: ['运动','轿车','驾驶','个性','年轻','通勤','城市'] },
-    { name: 'V60',  price: '¥369,900起', tag: '旅行生活', desc: '北欧豪华旅行车，承载自由生活方式', img: './assets/hero-car.png', keywords: ['旅行','自驾','露营','户外','生活','家庭','装载'] },
-    { name: 'C40',  price: '¥289,900起', tag: '纯电轿跑', desc: '纯电轿跑SUV，引领未来出行新方式', img: './assets/hero-car.png', keywords: ['纯电','电动','环保','轿跑','未来','科技','年轻'] },
-    { name: 'EX30', price: '¥209,900起', tag: '纯电入门', desc: '小巧纯电SUV，城市通勤的绿色之选', img: './assets/hero-car.png', keywords: ['纯电','电动','通勤','城市','小型','经济','入门','环保'] },
+    { name: 'XC90', price: '¥638,900起', tag: '旗舰七座', desc: '旗舰级豪华七座SUV，宽敞空间满足全家出行', img: './assets/hero-car.png', keywords: ['家庭','七座','大空间','SUV','旗舰','豪华','露营','长途'],
+      specs: {
+        '整车尺寸': { '长/宽/高(mm)': '4953/1958/1776', '轴距(mm)': '2984', '后备箱容积(L)': '262-1816' },
+        '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '210/286', '最大扭矩(N·m)': '420', '变速器': '8挡手自一体' },
+        '电驱系统': { '电池类型': '18.8 kWh 锂电池', '电机功率(kW/hp)': '107/145', '充电时间(0-80%)': '32分钟' },
+        '综合性能': { 'WLTC纯电续航(km)': '71', 'CLTC综合续航(km)': '860', '最高速度(km/h)': '180', '0-100km/h(s)': '5.9' },
+        '底盘悬架': { '驱动模式': '四驱', '悬架': '前-双叉臂/后-多连杆' },
+        '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+全车8气囊' },
+      }
+    },
+    { name: 'XC60', price: '¥399,900起', tag: '豪华中型', desc: '北欧豪华中型SUV，兼顾驾驶乐趣与实用性', img: './assets/hero-car.png', keywords: ['通勤','中型','SUV','运动','日常','城市','均衡'],
+      specs: {
+        '整车尺寸': { '长/宽/高(mm)': '4708/1902/1658', '轴距(mm)': '2865', '后备箱容积(L)': '483-1410' },
+        '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '184/250', '最大扭矩(N·m)': '350', '变速器': '8挡手自一体' },
+        '电驱系统': { '电池类型': '18.8 kWh 锂电池', '电机功率(kW/hp)': '107/145', '充电时间(0-80%)': '32分钟' },
+        '综合性能': { 'WLTC纯电续航(km)': '74', 'CLTC综合续航(km)': '900', '最高速度(km/h)': '180', '0-100km/h(s)': '6.5' },
+        '底盘悬架': { '驱动模式': '前驱/四驱可选', '悬架': '前-双叉臂/后-多连杆' },
+        '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+前排双气囊+侧气帘' },
+      }
+    },
+    { name: 'XC40', price: '¥269,900起', tag: '都市精选', desc: '紧凑型都市SUV，灵活穿梭城市每一天', img: './assets/hero-car.png', keywords: ['通勤','城市','紧凑','SUV','年轻','都市','小型','经济'],
+      specs: {
+        '整车尺寸': { '长/宽/高(mm)': '4440/1863/1652', '轴距(mm)': '2702', '后备箱容积(L)': '452-1328' },
+        '动力系统': { '发动机类型': '1.5T 涡轮增压', '最大功率(kW/hp)': '129/175', '最大扭矩(N·m)': '265', '变速器': '7挡双离合' },
+        '电驱系统': { '电池类型': '-', '电机功率(kW/hp)': '-', '充电时间(0-80%)': '-' },
+        '综合性能': { 'WLTC纯电续航(km)': '-', 'CLTC综合续航(km)': '-', '最高速度(km/h)': '180', '0-100km/h(s)': '8.4' },
+        '底盘悬架': { '驱动模式': '前驱', '悬架': '前-麦弗逊/后-多连杆' },
+        '智能安全': { '主动安全': '紧急制动+碰撞预警+车道辅助', '被动安全': '笼式车身+前排双气囊+侧气帘' },
+      }
+    },
+    { name: 'S90',  price: '¥449,900起', tag: '北欧旗舰', desc: '沃尔沃旗舰轿车，优雅气度商务之选', img: './assets/hero-car.png', keywords: ['商务','轿车','旗舰','优雅','豪华','舒适'],
+      specs: {
+        '整车尺寸': { '长/宽/高(mm)': '5090/1879/1450', '轴距(mm)': '3061', '后备箱容积(L)': '500' },
+        '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '184/250', '最大扭矩(N·m)': '350', '变速器': '8挡手自一体' },
+        '电驱系统': { '电池类型': '-', '电机功率(kW/hp)': '-', '充电时间(0-80%)': '-' },
+        '综合性能': { 'WLTC纯电续航(km)': '-', 'CLTC综合续航(km)': '-', '最高速度(km/h)': '230', '0-100km/h(s)': '7.2' },
+        '底盘悬架': { '驱动模式': '前驱', '悬架': '前-双叉臂/后-多连杆' },
+        '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+全车6气囊' },
+      }
+    },
+    { name: 'S60',  price: '¥329,900起', tag: '运动轿车', desc: '北欧豪华运动轿车，彰显个性驾驶品味', img: './assets/hero-car.png', keywords: ['运动','轿车','驾驶','个性','年轻','通勤','城市'],
+      specs: {
+        '整车尺寸': { '长/宽/高(mm)': '4761/1850/1437', '轴距(mm)': '2872', '后备箱容积(L)': '442' },
+        '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '184/250', '最大扭矩(N·m)': '350', '变速器': '8挡手自一体' },
+        '电驱系统': { '电池类型': '-', '电机功率(kW/hp)': '-', '充电时间(0-80%)': '-' },
+        '综合性能': { 'WLTC纯电续航(km)': '-', 'CLTC综合续航(km)': '-', '最高速度(km/h)': '230', '0-100km/h(s)': '6.9' },
+        '底盘悬架': { '驱动模式': '前驱', '悬架': '前-双叉臂/后-多连杆' },
+        '智能安全': { '主动安全': '紧急制动+碰撞预警+车道辅助', '被动安全': '笼式车身+前排双气囊+侧气帘' },
+      }
+    },
+    { name: 'V60',  price: '¥369,900起', tag: '旅行生活', desc: '北欧豪华旅行车，承载自由生活方式', img: './assets/hero-car.png', keywords: ['旅行','自驾','露营','户外','生活','家庭','装载'],
+      specs: {
+        '整车尺寸': { '长/宽/高(mm)': '4761/1850/1427', '轴距(mm)': '2872', '后备箱容积(L)': '529-1441' },
+        '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '184/250', '最大扭矩(N·m)': '350', '变速器': '8挡手自一体' },
+        '电驱系统': { '电池类型': '-', '电机功率(kW/hp)': '-', '充电时间(0-80%)': '-' },
+        '综合性能': { 'WLTC纯电续航(km)': '-', 'CLTC综合续航(km)': '-', '最高速度(km/h)': '230', '0-100km/h(s)': '7.1' },
+        '底盘悬架': { '驱动模式': '前驱', '悬架': '前-双叉臂/后-多连杆' },
+        '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+前排双气囊+侧气帘' },
+      }
+    },
+    { name: 'C40',  price: '¥289,900起', tag: '纯电轿跑', desc: '纯电轿跑SUV，引领未来出行新方式', img: './assets/hero-car.png', keywords: ['纯电','电动','环保','轿跑','未来','科技','年轻'],
+      specs: {
+        '整车尺寸': { '长/宽/高(mm)': '4440/1873/1591', '轴距(mm)': '2702', '后备箱容积(L)': '413-1205' },
+        '动力系统': { '发动机类型': '纯电驱动', '最大功率(kW/hp)': '-', '最大扭矩(N·m)': '-', '变速器': '单速固定齿比' },
+        '电驱系统': { '电池类型': '69 kWh 三元锂电池', '电机功率(kW/hp)': '170/231', '充电时间(0-80%)': '27分钟' },
+        '综合性能': { 'WLTC纯电续航(km)': '420', 'CLTC综合续航(km)': '530', '最高速度(km/h)': '180', '0-100km/h(s)': '7.4' },
+        '底盘悬架': { '驱动模式': '前驱', '悬架': '前-麦弗逊/后-多连杆' },
+        '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+全车6气囊' },
+      }
+    },
+    { name: 'EX30', price: '¥209,900起', tag: '纯电入门', desc: '小巧纯电SUV，城市通勤的绿色之选', img: './assets/hero-car.png', keywords: ['纯电','电动','通勤','城市','小型','经济','入门','环保'],
+      specs: {
+        '整车尺寸': { '长/宽/高(mm)': '4233/1836/1549', '轴距(mm)': '2650', '后备箱容积(L)': '318-904' },
+        '动力系统': { '发动机类型': '纯电驱动', '最大功率(kW/hp)': '-', '最大扭矩(N·m)': '-', '变速器': '单速固定齿比' },
+        '电驱系统': { '电池类型': '51 kWh 磷酸铁锂', '电机功率(kW/hp)': '200/272', '充电时间(0-80%)': '25分钟' },
+        '综合性能': { 'WLTC纯电续航(km)': '344', 'CLTC综合续航(km)': '400', '最高速度(km/h)': '180', '0-100km/h(s)': '5.3' },
+        '底盘悬架': { '驱动模式': '后驱', '悬架': '前-麦弗逊/后-多连杆' },
+        '智能安全': { '主动安全': '紧急制动+碰撞预警+车道辅助', '被动安全': '笼式车身+前排双气囊+侧气帘' },
+      }
+    },
   ];
+
+  // Expose carDB globally for compare page
+  window.__volvoCarDB = carDB;
 
   function openSheet() {
     overlay.classList.add('open');
@@ -165,6 +241,37 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
     return results;
   }
 
+  /* ── Compare intent detection ── */
+  function isCompareIntent(text) {
+    const kw = ['怎么选','对比','比较','区别','差异','哪个好','哪款好','vs','VS','pk','PK','选哪个','还是'];
+    return kw.some(k => text.includes(k));
+  }
+
+  /* ── Build compare entry card (replaces reco cards for compare intent) ── */
+  function buildCompareEntryHTML(cars) {
+    const names = cars.map(c => c.name);
+    let html = '<div class="ss-bubble">为您找到了以下车型，可以直接对比参数配置：</div>';
+    html += '<div class="ss-compare-entry">';
+    html += '<div class="ss-compare-cars">';
+    cars.forEach(car => {
+      html += '<div class="ss-compare-car-chip">'
+        + '<img src="' + car.img + '" alt="' + car.name + '" />'
+        + '<span>沃尔沃 ' + car.name + '</span>'
+        + '<span class="ss-compare-car-price">' + car.price + '</span>'
+        + '</div>';
+    });
+    html += '</div>';
+    html += '<button class="ss-compare-go-btn" data-cars="' + names.join(',') + '">开始对比 →</button>';
+    html += '</div>';
+    html += '<div class="ss-bubble">点击"开始对比"查看详细参数对比，或继续描述您的需求。</div>';
+    html += '<div class="ss-actions">'
+      + '<button class="ss-act" data-act="regen" title="重新生成"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 8a5.5 5.5 0 0 1-9.38 3.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M2.5 8a5.5 5.5 0 0 1 9.38-3.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M2.5 13V10h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 3v3h-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+      + '<button class="ss-act" data-act="like" title="赞同"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 14H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h2m0 7V7m0 7h6.65a2 2 0 0 0 1.98-1.72l.67-4.5A1 1 0 0 0 13.31 6H10V3.5a1.5 1.5 0 0 0-1.5-1.5h-.1a.6.6 0 0 0-.56.39L5.97 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+      + '<button class="ss-act" data-act="dislike" title="不赞同"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M11 2h2a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2m0-7V9m0-7H4.35a2 2 0 0 0-1.98 1.72l-.67 4.5A1 1 0 0 0 2.69 10H6v2.5A1.5 1.5 0 0 0 7.5 14h.1a.6.6 0 0 0 .56-.39L10.03 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+      + '</div>';
+    return html;
+  }
+
   function buildRecoHTML(cars) {
     let html = '<div class="ss-bubble">根据您的需求，为您推荐以下车型：</div>';
     html += '<div class="ss-reco-cards">';
@@ -200,28 +307,54 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
     setTimeout(() => {
       typing.remove();
       const cars = matchCars(text);
-      const aiDiv = addMsg(buildRecoHTML(cars), 'ai');
+      const compare = isCompareIntent(text);
+      const html = compare ? buildCompareEntryHTML(cars) : buildRecoHTML(cars);
+      const aiDiv = addMsg(html, 'ai');
       body.scrollTop = body.scrollHeight;
 
-      // Bind card clicks
-      aiDiv.querySelectorAll('.ss-reco-card').forEach(card => {
-        card.addEventListener('click', () => {
-          closeSheet();
-          showScreen('more');
+      if (compare) {
+        // Bind compare button
+        const goBtn = aiDiv.querySelector('.ss-compare-go-btn');
+        if (goBtn) {
+          goBtn.addEventListener('click', () => {
+            const names = goBtn.getAttribute('data-cars').split(',');
+            closeSheet();
+            openCompare(names);
+          });
+        }
+      } else {
+        // Bind card clicks
+        aiDiv.querySelectorAll('.ss-reco-card').forEach(card => {
+          card.addEventListener('click', () => {
+            closeSheet();
+            showScreen('more');
+          });
         });
-      });
+      }
 
-      // Bind action icons
+      // Bind regen
       aiDiv.querySelector('[data-act="regen"]').addEventListener('click', () => {
         aiDiv.remove();
         const t2 = addTyping();
         setTimeout(() => {
           t2.remove();
-          const newDiv = addMsg(buildRecoHTML(matchCars(text)), 'ai');
+          const newCars = matchCars(text);
+          const newCompare = isCompareIntent(text);
+          const newHtml = newCompare ? buildCompareEntryHTML(newCars) : buildRecoHTML(newCars);
+          const newDiv = addMsg(newHtml, 'ai');
           body.scrollTop = body.scrollHeight;
-          newDiv.querySelectorAll('.ss-reco-card').forEach(c => {
-            c.addEventListener('click', () => { closeSheet(); showScreen('more'); });
-          });
+
+          if (newCompare) {
+            const btn = newDiv.querySelector('.ss-compare-go-btn');
+            if (btn) btn.addEventListener('click', () => {
+              closeSheet();
+              openCompare(btn.getAttribute('data-cars').split(','));
+            });
+          } else {
+            newDiv.querySelectorAll('.ss-reco-card').forEach(c => {
+              c.addEventListener('click', () => { closeSheet(); showScreen('more'); });
+            });
+          }
           bindActions(newDiv, text);
         }, 1000 + Math.random() * 600);
       });
@@ -337,4 +470,199 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => goTo(i));
   });
+})();
+
+/* ═══════════════════════════════════════════════
+   Compare Page Logic  (车型对比)
+   ═══════════════════════════════════════════════ */
+(function () {
+  const compareScreen = document.getElementById('screen-compare');
+  const carRowEl = document.getElementById('cmp-car-row');
+  const bodyEl = document.getElementById('cmp-body');
+  const backBtn = document.getElementById('cmp-back');
+  const pickerOverlay = document.getElementById('cmp-picker-overlay');
+  const pickerList = document.getElementById('cmp-picker-list');
+  const pickerClose = document.getElementById('cmp-picker-close');
+  if (!compareScreen) return;
+
+  let selectedCars = []; // array of car objects (max 3)
+  const MAX_CARS = 3;
+
+  function getCarDB() {
+    return window.__volvoCarDB || [];
+  }
+
+  /* ── Open compare screen ── */
+  window.openCompare = function (carNames) {
+    const db = getCarDB();
+    selectedCars = carNames
+      .map(n => db.find(c => c.name === n))
+      .filter(Boolean)
+      .slice(0, MAX_CARS);
+
+    // Hide all other screens
+    Object.values(screens).forEach(s => s && s.classList.remove('active'));
+    document.querySelector('.bottom-tab')?.classList.add('hidden');
+    compareScreen.classList.add('active');
+
+    render();
+  };
+
+  function closeCompare() {
+    compareScreen.classList.remove('active');
+    document.querySelector('.bottom-tab')?.classList.remove('hidden');
+    showScreen('buy');
+  }
+
+  backBtn.addEventListener('click', closeCompare);
+
+  /* ── Render everything ── */
+  function render() {
+    renderCarRow();
+    renderSpecTable();
+  }
+
+  /* ── Car selector row ── */
+  function renderCarRow() {
+    let html = '';
+    selectedCars.forEach((car, idx) => {
+      html += '<div class="cmp-car-slot">'
+        + '<button class="cmp-car-slot-remove" data-idx="' + idx + '">&times;</button>'
+        + '<img src="' + car.img + '" alt="' + car.name + '" />'
+        + '<span class="cmp-car-slot-name">' + car.name + '</span>'
+        + '<span class="cmp-car-slot-price">' + car.price + '</span>'
+        + '</div>';
+    });
+    if (selectedCars.length < MAX_CARS) {
+      html += '<div class="cmp-add-slot" id="cmp-add-btn">'
+        + '<div class="cmp-add-circle">+</div>'
+        + '<span class="cmp-add-label">添加车型</span>'
+        + '</div>';
+    }
+    carRowEl.innerHTML = html;
+
+    // Bind remove
+    carRowEl.querySelectorAll('.cmp-car-slot-remove').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.getAttribute('data-idx'));
+        selectedCars.splice(idx, 1);
+        render();
+      });
+    });
+
+    // Bind add
+    const addBtn = document.getElementById('cmp-add-btn');
+    if (addBtn) addBtn.addEventListener('click', openPicker);
+  }
+
+  /* ── Spec table ── */
+  function renderSpecTable() {
+    if (selectedCars.length === 0) {
+      bodyEl.innerHTML = '<div style="padding:40px 16px;text-align:center;color:#999;font-size:14px;">请添加车型开始对比</div>';
+      return;
+    }
+
+    // Collect all spec sections from first car (all cars share same schema)
+    const sectionNames = Object.keys(selectedCars[0].specs);
+    let html = '';
+
+    sectionNames.forEach(section => {
+      html += '<div class="cmp-section-title">' + section + '</div>';
+      const keys = Object.keys(selectedCars[0].specs[section]);
+      keys.forEach(key => {
+        html += '<div class="cmp-row">';
+        html += '<div class="cmp-row-label">' + key + '</div>';
+        html += '<div class="cmp-row-values">';
+
+        const values = selectedCars.map(car => car.specs[section][key] || '-');
+        // Determine best value for highlighting
+        const bestIdx = findBestValue(key, values);
+
+        values.forEach((val, vi) => {
+          const hl = (bestIdx === vi && selectedCars.length > 1) ? ' highlight' : '';
+          html += '<div class="cmp-row-val' + hl + '">' + val + '</div>';
+        });
+
+        html += '</div></div>';
+      });
+    });
+
+    bodyEl.innerHTML = html;
+  }
+
+  /* Determine which value is "best" for highlighting: bigger is better for most numeric specs */
+  function findBestValue(key, values) {
+    // Skip non-comparable fields
+    const skipKeys = ['发动机类型','变速器','电池类型','驱动模式','悬架','主动安全','被动安全','长/宽/高(mm)'];
+    if (skipKeys.some(sk => key.includes(sk))) return -1;
+
+    // Extract numeric values
+    const nums = values.map(v => {
+      if (v === '-') return null;
+      const m = v.replace(/,/g, '').match(/[\d.]+/);
+      return m ? parseFloat(m[0]) : null;
+    });
+
+    // If all null or all same, no highlight
+    const valids = nums.filter(n => n !== null);
+    if (valids.length < 2) return -1;
+    if (new Set(valids).size === 1) return -1;
+
+    // 0-100: lower is better. Charging time: lower is better.
+    const lowerBetter = key.includes('0-100') || key.includes('充电时间');
+    let bestVal = lowerBetter ? Infinity : -Infinity;
+    let bestIdx = -1;
+
+    nums.forEach((n, i) => {
+      if (n === null) return;
+      if (lowerBetter ? n < bestVal : n > bestVal) {
+        bestVal = n;
+        bestIdx = i;
+      }
+    });
+
+    return bestIdx;
+  }
+
+  /* ── Car picker ── */
+  function openPicker() {
+    const db = getCarDB();
+    const selectedNames = selectedCars.map(c => c.name);
+    let html = '';
+    db.forEach(car => {
+      const alreadySelected = selectedNames.includes(car.name);
+      html += '<div class="cmp-picker-item' + (alreadySelected ? ' disabled' : '') + '" data-name="' + car.name + '">'
+        + '<img src="' + car.img + '" alt="' + car.name + '" />'
+        + '<div class="cmp-picker-item-info">'
+        + '<div class="cmp-picker-item-name">沃尔沃 ' + car.name + '</div>'
+        + '<div class="cmp-picker-item-price">' + car.price + '</div>'
+        + '</div>'
+        + (alreadySelected ? '<span class="cmp-picker-item-check">✓</span>' : '')
+        + '</div>';
+    });
+    pickerList.innerHTML = html;
+    pickerOverlay.classList.add('open');
+
+    // Bind picks
+    pickerList.querySelectorAll('.cmp-picker-item:not(.disabled)').forEach(item => {
+      item.addEventListener('click', () => {
+        const name = item.getAttribute('data-name');
+        const car = db.find(c => c.name === name);
+        if (car && selectedCars.length < MAX_CARS) {
+          selectedCars.push(car);
+          closePicker();
+          render();
+        }
+      });
+    });
+  }
+
+  function closePicker() {
+    pickerOverlay.classList.remove('open');
+  }
+
+  pickerOverlay.addEventListener('click', (e) => {
+    if (e.target === pickerOverlay) closePicker();
+  });
+  pickerClose.addEventListener('click', closePicker);
 })();

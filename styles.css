@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+.hidden { display: none !important; }
+
 html,
 body {
   margin: 0;
@@ -76,7 +78,7 @@ body {
   max-width: 393px;
   height: calc(90px + env(safe-area-inset-bottom, 0px));
   background: #ebebeb;
-  border-top: 0.692px solid #e5e7eb;
+  border-top: 0.5px solid #c8c8c8;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -772,12 +774,13 @@ body {
   line-height: 28px;
   letter-spacing: -0.4395px;
   color: #0a0a0a;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .floating-cta-btns {
   display: flex;
-  gap: 11.998px;
+  gap: 8px;
+  margin-left: auto;
 }
 
 .outline-btn,
@@ -785,7 +788,7 @@ body {
   border-radius: 9999px;
   height: 37.376px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.1504px;
 }
@@ -794,16 +797,16 @@ body {
   border: 0.692px solid #101828;
   background: transparent;
   color: #0a0a0a;
-  flex: 1 0 0;
-  min-width: 0;
+  padding: 0 16px;
+  white-space: nowrap;
 }
 
 .solid-btn {
   border: 0;
   background: #101828;
   color: #fff;
-  width: 101.655px;
-  flex: 0 0 101.655px;
+  padding: 0 16px;
+  white-space: nowrap;
 }
 
 /* ══════════════════════════════════════
@@ -1337,6 +1340,7 @@ body {
   left: auto;
   bottom: auto;
   transform: none;
+  border-top: 0.5px solid #c8c8c8;
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
@@ -1497,4 +1501,325 @@ body {
     width: 100%;
     max-width: 100%;
   }
+  .compare-screen {
+    max-width: 100%;
+  }
+}
+
+/* ═════════════════════════════════════════════════
+   Compare Screen  —  浅色简约风
+   ═════════════════════════════════════════════════ */
+
+.compare-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: #f6f7f9;
+  display: none;
+  flex-direction: column;
+  max-width: 393px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.compare-screen.active {
+  display: flex;
+}
+
+/* ── Header ── */
+.cmp-header {
+  display: flex;
+  align-items: center;
+  padding: max(12px, env(safe-area-inset-top, 44px)) 16px 12px;
+  background: #fff;
+  border-bottom: 0.5px solid #e0e0e0;
+  flex-shrink: 0;
+}
+.cmp-back-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.cmp-title {
+  flex: 1;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+.cmp-header-spacer { width: 32px; }
+
+/* ── Car selector row ── */
+.cmp-car-row {
+  display: flex;
+  background: #fff;
+  padding: 12px 0 8px;
+  border-bottom: 0.5px solid #e0e0e0;
+  flex-shrink: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.cmp-car-row::-webkit-scrollbar { display: none; }
+
+.cmp-car-slot {
+  flex: 0 0 33.333%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6px;
+  position: relative;
+}
+.cmp-car-slot img {
+  width: 80px;
+  height: 48px;
+  object-fit: contain;
+}
+.cmp-car-slot-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+.cmp-car-slot-price {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+.cmp-car-slot-remove {
+  position: absolute;
+  top: -2px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  border: none;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Add car slot */
+.cmp-add-slot {
+  flex: 0 0 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 6px;
+}
+.cmp-add-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px dashed #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #bbb;
+}
+.cmp-add-label {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
+
+/* ── Spec table body ── */
+.cmp-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+}
+
+.cmp-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1C6BBA;
+  padding: 14px 16px 6px;
+  background: #f6f7f9;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.cmp-row {
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border-bottom: 0.5px solid #ececec;
+}
+.cmp-row:nth-child(even) {
+  background: #fafbfc;
+}
+.cmp-row-label {
+  flex: 0 0 90px;
+  font-size: 12px;
+  color: #666;
+  padding: 10px 8px 10px 16px;
+  display: flex;
+  align-items: center;
+  border-right: 0.5px solid #ececec;
+  word-break: break-all;
+}
+.cmp-row-values {
+  flex: 1;
+  display: flex;
+}
+.cmp-row-val {
+  flex: 1;
+  font-size: 12px;
+  color: #1a1a1a;
+  padding: 10px 8px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+}
+.cmp-row-val.highlight {
+  color: #1C6BBA;
+  font-weight: 600;
+}
+
+/* ── Picker overlay ── */
+.cmp-picker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+.cmp-picker-overlay.open {
+  display: flex;
+}
+.cmp-picker-sheet {
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  max-width: 393px;
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+}
+.cmp-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 0.5px solid #e0e0e0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.cmp-picker-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+}
+
+.cmp-picker-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid #f0f0f0;
+  cursor: pointer;
+}
+.cmp-picker-item:active {
+  background: #f0f4f9;
+}
+.cmp-picker-item.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+.cmp-picker-item img {
+  width: 56px;
+  height: 34px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+.cmp-picker-item-info {
+  flex: 1;
+}
+.cmp-picker-item-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+.cmp-picker-item-price {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+.cmp-picker-item-check {
+  font-size: 18px;
+  color: #1C6BBA;
+  font-weight: 700;
+}
+
+/* ── Compare entry card in chat ── */
+.ss-compare-entry {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 6px 0;
+}
+.ss-compare-cars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.ss-compare-car-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f6f7f9;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.ss-compare-car-chip img {
+  width: 48px;
+  height: 30px;
+  object-fit: contain;
+}
+.ss-compare-car-chip span:first-of-type {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  flex: 1;
+}
+.ss-compare-car-price {
+  font-size: 12px;
+  color: #888;
+}
+.ss-compare-go-btn {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #1C6BBA;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+.ss-compare-go-btn:active {
+  opacity: 0.85;
 }
