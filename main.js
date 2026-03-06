@@ -256,7 +256,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
     cars.forEach(car => {
       html += '<div class="ss-compare-car-chip">'
         + '<img src="' + car.img + '" alt="' + car.name + '" />'
-        + '<span>沃尔沃 ' + car.name + '</span>'
+        + '<span>' + car.name + '</span>'
         + '<span class="ss-compare-car-price">' + car.price + '</span>'
         + '</div>';
     });
@@ -279,7 +279,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
       html += '<div class="ss-reco-card" data-car="' + car.name + '">'
         + '<div class="ss-reco-card-img"><img src="' + car.img + '" alt="' + car.name + '" /></div>'
         + '<div class="ss-reco-card-body">'
-        + '<p class="ss-reco-card-name">沃尔沃 ' + car.name + '</p>'
+        + '<p class="ss-reco-card-name">' + car.name + '</p>'
         + '<p class="ss-reco-card-price">' + car.price + '</p>'
         + '<span class="ss-reco-card-tag">' + car.tag + '</span>'
         + '<button class="ss-reco-card-go">查看详情 →</button>'
