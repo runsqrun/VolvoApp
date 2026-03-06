@@ -325,7 +325,7 @@ body {
   color: #999;
   line-height: 18px;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -528,7 +528,7 @@ body {
   display: flex;
   align-items: center;
   gap: 11.998px;
-  padding: 47px 15.997px 12px;
+  padding: max(47px, calc(env(safe-area-inset-top, 47px) + 4px)) 15.997px 12px;
   background: transparent;
 }
 
@@ -1481,4 +1481,20 @@ body {
   color: #666;
   line-height: 1.7;
   margin: 0;
+}
+
+/* ── Edge-to-edge on real mobile devices ── */
+@media screen and (max-width: 430px) {
+  .app-shell {
+    max-width: 100%;
+  }
+  .bottom-tab,
+  .sticky-header,
+  .smart-sheet {
+    max-width: 100%;
+  }
+  .floating-cta {
+    width: 100%;
+    max-width: 100%;
+  }
 }

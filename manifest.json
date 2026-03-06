@@ -1,0 +1,9 @@
+{
+  "name": "Volvo App",
+  "short_name": "Volvo",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1C6BBA",
+  "orientation": "portrait"
+}
