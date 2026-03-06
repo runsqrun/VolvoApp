@@ -640,7 +640,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
       html += '<div class="cmp-picker-item' + (alreadySelected ? ' disabled' : '') + '" data-name="' + car.name + '">'
         + '<img src="' + car.img + '" alt="' + car.name + '" />'
         + '<div class="cmp-picker-item-info">'
-        + '<div class="cmp-picker-item-name">沃尔沃 ' + car.name + '</div>'
+        + '<div class="cmp-picker-item-name">' + car.name + '</div>'
         + '<div class="cmp-picker-item-price">' + car.price + '</div>'
         + '</div>'
         + (alreadySelected ? '<span class="cmp-picker-item-check">✓</span>' : '')
