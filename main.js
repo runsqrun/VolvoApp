@@ -10,7 +10,7 @@ const floatingCta = document.getElementById('floating-cta');
 const toMoreBtn = document.getElementById('to-more-btn');
 const backBtn = document.getElementById('back-btn');
 
-let activeScreen = 'discover';
+let activeScreen = 'buy';
 let lastScrollY = 0;
 
 function showScreen(name) {
