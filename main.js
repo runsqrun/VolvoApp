@@ -63,7 +63,7 @@ window.addEventListener(
   { passive: true }
 );
 
-showScreen('discover');
+showScreen('buy');
 
 /* ── 车型解读 tab switching ── */
 document.querySelectorAll('.mr-tab').forEach((tab) => {
