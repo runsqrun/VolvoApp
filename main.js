@@ -670,4 +670,8 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
   }
 
   pickerClose.addEventListener('click', closePicker);
+  // Close sheet when tapping backdrop
+  pickerOverlay.addEventListener('click', (e) => {
+    if (e.target === pickerOverlay) closePicker();
+  });
 })();

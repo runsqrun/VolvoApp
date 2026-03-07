@@ -539,15 +539,13 @@
       </div>
     </div>
 
-    <!-- Car picker full-screen page -->
+    <!-- Car picker bottom sheet -->
     <div id="cmp-picker-overlay" class="cmp-picker-overlay">
-      <div class="cmp-picker-page">
+      <div class="cmp-picker-sheet">
         <div class="cmp-picker-header">
-          <button id="cmp-picker-close" class="cmp-picker-back">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+          <div class="cmp-picker-handle"></div>
           <span>选择车型</span>
-          <div style="width:32px"></div>
+          <button id="cmp-picker-close" class="cmp-picker-close-btn">&times;</button>
         </div>
         <div class="cmp-picker-list" id="cmp-picker-list">
           <!-- populated by JS -->
