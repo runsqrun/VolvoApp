@@ -101,7 +101,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
 
   // Volvo car knowledge base for recommendations
   const carDB = [
-    { name: 'XC90', price: '¥638,900起', tag: '旗舰七座', desc: '旗舰级豪华七座SUV，宽敞空间满足全家出行', img: './assets/car-xc90.png', keywords: ['家庭','七座','大空间','SUV','旗舰','豪华','露营','长途'],
+    { name: 'XC90', price: '¥429,900起', tag: '旗舰七座', subtitle: '进口旗舰大六座', powerTag: '轻混/混动', desc: '旗舰级豪华七座SUV，宽敞空间满足全家出行', img: './assets/car-xc90.png', keywords: ['家庭','七座','大空间','SUV','旗舰','豪华','露营','长途'],
       specs: {
         '整车尺寸': { '长/宽/高(mm)': '4953/1958/1776', '轴距(mm)': '2984', '后备箱容积(L)': '262-1816' },
         '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '210/286', '最大扭矩(N·m)': '420', '变速器': '8挡手自一体' },
@@ -111,7 +111,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
         '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+全车8气囊' },
       }
     },
-    { name: 'XC60', price: '¥399,900起', tag: '豪华中型', desc: '北欧豪华中型SUV，兼顾驾驶乐趣与实用性', img: './assets/car-xc60.png', keywords: ['通勤','中型','SUV','运动','日常','城市','均衡'],
+    { name: 'XC60', price: '¥259,900起', tag: '豪华中型', subtitle: '新北欧豪华SUV', powerTag: '混动/轻混', desc: '北欧豪华中型SUV，兼顾驾驶乐趣与实用性', img: './assets/car-xc60.png', keywords: ['通勤','中型','SUV','运动','日常','城市','均衡'],
       specs: {
         '整车尺寸': { '长/宽/高(mm)': '4708/1902/1658', '轴距(mm)': '2865', '后备箱容积(L)': '483-1410' },
         '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '184/250', '最大扭矩(N·m)': '350', '变速器': '8挡手自一体' },
@@ -121,7 +121,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
         '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+前排双气囊+侧气帘' },
       }
     },
-    { name: 'XC40', price: '¥269,900起', tag: '都市精选', desc: '紧凑型都市SUV，灵活穿梭城市每一天', img: './assets/hero-car.png', keywords: ['通勤','城市','紧凑','SUV','年轻','都市','小型','经济'],
+    { name: 'XC40', price: '¥201,900起', tag: '都市精选', subtitle: '都市豪华纯正SUV', powerTag: '轻混', desc: '紧凑型都市SUV，灵活穿梭城市每一天', img: './assets/hero-car.png', keywords: ['通勤','城市','紧凑','SUV','年轻','都市','小型','经济'],
       specs: {
         '整车尺寸': { '长/宽/高(mm)': '4440/1863/1652', '轴距(mm)': '2702', '后备箱容积(L)': '452-1328' },
         '动力系统': { '发动机类型': '1.5T 涡轮增压', '最大功率(kW/hp)': '129/175', '最大扭矩(N·m)': '265', '变速器': '7挡双离合' },
@@ -131,7 +131,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
         '智能安全': { '主动安全': '紧急制动+碰撞预警+车道辅助', '被动安全': '笼式车身+前排双气囊+侧气帘' },
       }
     },
-    { name: 'S90',  price: '¥449,900起', tag: '北欧旗舰', desc: '沃尔沃旗舰轿车，优雅气度商务之选', img: './assets/car-s90.png', keywords: ['商务','轿车','旗舰','优雅','豪华','舒适'],
+    { name: 'S90',  price: '¥267,900起', tag: '北欧旗舰', subtitle: '北欧豪华旗舰型轿车', powerTag: '轻混/混动', desc: '沃尔沃旗舰轿车，优雅气度商务之选', img: './assets/car-s90.png', keywords: ['商务','轿车','旗舰','优雅','豪华','舒适'],
       specs: {
         '整车尺寸': { '长/宽/高(mm)': '5090/1879/1450', '轴距(mm)': '3061', '后备箱容积(L)': '500' },
         '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '184/250', '最大扭矩(N·m)': '350', '变速器': '8挡手自一体' },
@@ -141,7 +141,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
         '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+全车6气囊' },
       }
     },
-    { name: 'S60',  price: '¥329,900起', tag: '运动轿车', desc: '北欧豪华运动轿车，彰显个性驾驶品味', img: './assets/hero-car.png', keywords: ['运动','轿车','驾驶','个性','年轻','通勤','城市'],
+    { name: 'S60',  price: '¥306,900起', tag: '运动轿车', subtitle: '北欧运动豪华轿车', powerTag: '轻混/混动', desc: '北欧豪华运动轿车，彰显个性驾驶品味', img: './assets/hero-car.png', keywords: ['运动','轿车','驾驶','个性','年轻','通勤','城市'],
       specs: {
         '整车尺寸': { '长/宽/高(mm)': '4761/1850/1437', '轴距(mm)': '2872', '后备箱容积(L)': '442' },
         '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '184/250', '最大扭矩(N·m)': '350', '变速器': '8挡手自一体' },
@@ -151,7 +151,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
         '智能安全': { '主动安全': '紧急制动+碰撞预警+车道辅助', '被动安全': '笼式车身+前排双气囊+侧气帘' },
       }
     },
-    { name: 'V60',  price: '¥369,900起', tag: '旅行生活', desc: '北欧豪华旅行车，承载自由生活方式', img: './assets/car-v60.png', keywords: ['旅行','自驾','露营','户外','生活','家庭','装载'],
+    { name: 'V60',  price: '¥298,900起', tag: '旅行生活', subtitle: '动感豪华旅行车', powerTag: '轻混', desc: '北欧豪华旅行车，承载自由生活方式', img: './assets/car-v60.png', keywords: ['旅行','自驾','露营','户外','生活','家庭','装载'],
       specs: {
         '整车尺寸': { '长/宽/高(mm)': '4761/1850/1427', '轴距(mm)': '2872', '后备箱容积(L)': '529-1441' },
         '动力系统': { '发动机类型': '2.0T 涡轮增压', '最大功率(kW/hp)': '184/250', '最大扭矩(N·m)': '350', '变速器': '8挡手自一体' },
@@ -161,7 +161,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
         '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+前排双气囊+侧气帘' },
       }
     },
-    { name: 'C40',  price: '¥289,900起', tag: '纯电轿跑', desc: '纯电轿跑SUV，引领未来出行新方式', img: './assets/car-c40.png', keywords: ['纯电','电动','环保','轿跑','未来','科技','年轻'],
+    { name: 'C40',  price: '¥289,900起', tag: '纯电轿跑', subtitle: '纯电轿跑SUV', powerTag: '纯电', desc: '纯电轿跑SUV，引领未来出行新方式', img: './assets/car-c40.png', keywords: ['纯电','电动','环保','轿跑','未来','科技','年轻'],
       specs: {
         '整车尺寸': { '长/宽/高(mm)': '4440/1873/1591', '轴距(mm)': '2702', '后备箱容积(L)': '413-1205' },
         '动力系统': { '发动机类型': '纯电驱动', '最大功率(kW/hp)': '-', '最大扭矩(N·m)': '-', '变速器': '单速固定齿比' },
@@ -171,7 +171,7 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
         '智能安全': { '主动安全': '紧急制动+碰撞预警+车道保持', '被动安全': '笼式车身+全车6气囊' },
       }
     },
-    { name: 'EX30', price: '¥209,900起', tag: '纯电入门', desc: '小巧纯电SUV，城市通勤的绿色之选', img: './assets/hero-car.png', keywords: ['纯电','电动','通勤','城市','小型','经济','入门','环保'],
+    { name: 'EX30', price: '¥200,800起', tag: '纯电入门', subtitle: '北欧高智感纯电SUV', powerTag: '纯电', desc: '小巧纯电SUV，城市通勤的绿色之选', img: './assets/hero-car.png', keywords: ['纯电','电动','通勤','城市','小型','经济','入门','环保'],
       specs: {
         '整车尺寸': { '长/宽/高(mm)': '4233/1836/1549', '轴距(mm)': '2650', '后备箱容积(L)': '318-904' },
         '动力系统': { '发动机类型': '纯电驱动', '最大功率(kW/hp)': '-', '最大扭矩(N·m)': '-', '变速器': '单速固定齿比' },
@@ -637,20 +637,22 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
     let html = '';
     db.forEach(car => {
       const alreadySelected = selectedNames.includes(car.name);
-      html += '<div class="cmp-picker-item' + (alreadySelected ? ' disabled' : '') + '" data-name="' + car.name + '">'
-        + '<img src="' + car.img + '" alt="' + car.name + '" />'
-        + '<div class="cmp-picker-item-info">'
-        + '<div class="cmp-picker-item-name">' + car.name + '</div>'
-        + '<div class="cmp-picker-item-price">' + car.price + '</div>'
+      html += '<div class="cmp-picker-card' + (alreadySelected ? ' disabled' : '') + '" data-name="' + car.name + '">'
+        + '<div class="cmp-picker-card-info">'
+        + '<div class="cmp-picker-card-name">' + car.name + '</div>'
+        + (car.subtitle ? '<div class="cmp-picker-card-subtitle">' + car.subtitle + '</div>' : '')
+        + (car.powerTag ? '<span class="cmp-picker-card-tag">' + car.powerTag + '</span>' : '')
+        + '<div class="cmp-picker-card-price">' + car.price + '</div>'
         + '</div>'
-        + (alreadySelected ? '<span class="cmp-picker-item-check">✓</span>' : '')
+        + '<img class="cmp-picker-card-img" src="' + car.img + '" alt="' + car.name + '" />'
+        + (alreadySelected ? '<span class="cmp-picker-card-check">✓</span>' : '')
         + '</div>';
     });
     pickerList.innerHTML = html;
     pickerOverlay.classList.add('open');
 
     // Bind picks
-    pickerList.querySelectorAll('.cmp-picker-item:not(.disabled)').forEach(item => {
+    pickerList.querySelectorAll('.cmp-picker-card:not(.disabled)').forEach(item => {
       item.addEventListener('click', () => {
         const name = item.getAttribute('data-name');
         const car = db.find(c => c.name === name);
@@ -667,8 +669,5 @@ document.querySelectorAll('.ob-tabs .v-tab').forEach((tab) => {
     pickerOverlay.classList.remove('open');
   }
 
-  pickerOverlay.addEventListener('click', (e) => {
-    if (e.target === pickerOverlay) closePicker();
-  });
   pickerClose.addEventListener('click', closePicker);
 })();
